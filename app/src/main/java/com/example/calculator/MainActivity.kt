@@ -2,6 +2,8 @@ package com.example.calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 
 class MainActivity : AppCompatActivity()
 {
