@@ -26,7 +26,6 @@
             android:id="@+id/ResultText"
             android:layout_width="380dp"
             android:layout_height="100dp"
-            android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,11 +57,12 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <com.google.android.material.button.MaterialButton
+                    <ImageButton
                         android:id="@+id/ButtonDelete"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:background="@color/white"
+
+                        android:contentDescription="@string/delete"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -89,51 +89,53 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-                
-                <com.google.android.material.button.MaterialButton
+
+                <ImageButton
                     android:id="@+id/ButtonClear"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
-                    android:text="@string/clear"
-                    android:textSize=""
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/clear"
+                    android:background="@drawable/clear"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/ButtonUnaryMinus"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="99dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/unary_minus"
+                    android:background="@drawable/unary_minus"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/ButtonPercent"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="198dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/percent"
+                    android:background="@drawable/percent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/ButtonDivide"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="297dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/divide"
+                    android:background="@drawable/divide"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
             </FrameLayout>
 
             <FrameLayout
@@ -145,48 +147,52 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/Button7"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/seven"
+                    android:background="@drawable/seven"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/Button8"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="99dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/eight"
+                    android:background="@drawable/eight"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/Button9"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="198dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/nine"
+                    android:background="@drawable/nine"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/ButtonMultiplication"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="297dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/multiplication"
+                    android:background="@drawable/multiplication"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
             </FrameLayout>
 
             <FrameLayout
@@ -198,48 +204,52 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/Button4"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/four"
+                    android:background="@drawable/four"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/Button5"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="99dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/five"
+                    android:background="@drawable/five"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/Button6"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="198dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/six"
+                    android:background="@drawable/six"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/ButtonSubtraction"
+                <ImageButton
+                    android:id="@+id/ButtonMinus"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="297dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/minus"
+                    android:background="@drawable/minus"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
             </FrameLayout>
 
             <FrameLayout
@@ -251,48 +261,52 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/Button1"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/one"
+                    android:background="@drawable/one"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/Button2"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="99dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/two"
+                    android:background="@drawable/two"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/Button3"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="198dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/three"
+                    android:background="@drawable/three"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/ButtonAddition"
+                <ImageButton
+                    android:id="@+id/ButtonPlus"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="297dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/plus"
+                    android:background="@drawable/plus"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
             </FrameLayout>
 
             <FrameLayout
@@ -304,37 +318,40 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/Button0"
                     android:layout_width="182dp"
                     android:layout_height="83dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/zero"
+                    android:background="@drawable/zero"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/ButtonСomma"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="198dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/comma"
+                    android:background="@drawable/comma"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
+                <ImageButton
                     android:id="@+id/ButtonEqual"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="297dp"
-                    app:cornerRadius="28dp"
+                    android:contentDescription="@string/equal"
+                    android:background="@drawable/equal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
             </FrameLayout>
         </FrameLayout>
     </FrameLayout>

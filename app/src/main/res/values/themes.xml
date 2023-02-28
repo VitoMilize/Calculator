@@ -1,6 +1,9 @@
 <resources>
     <style name="Theme.Calculator" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/grey</item>
+        <item name="colorSecondary">@color/grey</item>
+        <item name="colorAccent">@color/grey</item>
+
         <item name="android:statusBarColor">@color/grey</item>
         <item name="android:navigationBarColor">@color/grey</item>
     </style>

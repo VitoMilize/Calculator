@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="button0">0</string>
-    <string name="clear">AC</string>
+    <string name="zero">button 0</string>
+    <string name="one">button 1</string>
+    <string name="two">button 2</string>
+    <string name="three">button 3</string>
+    <string name="four">button 4</string>
+    <string name="five">button 5</string>
+    <string name="six">button 6</string>
+    <string name="seven">button 7</string>
+    <string name="eight">button 8</string>
+    <string name="nine">button 9</string>
+    <string name="plus">button plus</string>
+    <string name="minus">button minus</string>
+    <string name="multiplication">button multiplication</string>
+    <string name="divide">button divide</string>
+    <string name="clear">button clear</string>
+    <string name="delete">button delete</string>
+    <string name="unary_minus">button unary minus</string>
+    <string name="percent">button percent</string>
+    <string name="comma">button comma</string>
+    <string name="equal">button equal</string>
+    <string name="result">result</string>
+
 </resources>
