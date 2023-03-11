@@ -26,6 +26,7 @@
             android:id="@+id/ResultText"
             android:layout_width="380dp"
             android:layout_height="100dp"
+            android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -319,9 +320,21 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageButton
-                    android:id="@+id/Button0"
-                    android:layout_width="182dp"
+                    android:id="@+id/ButtonBrackets"
+                    android:layout_width="83dp"
                     android:layout_height="83dp"
+                    android:contentDescription="@string/one"
+                    android:background="@drawable/one"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/Button0"
+                    android:layout_width="83dp"
+                    android:layout_height="83dp"
+                    android:layout_marginStart="99dp"
                     android:contentDescription="@string/zero"
                     android:background="@drawable/zero"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -329,8 +342,9 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+
                 <ImageButton
-                    android:id="@+id/ButtonСomma"
+                    android:id="@+id/ButtonComma"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_marginStart="198dp"
