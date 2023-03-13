@@ -18,12 +18,15 @@ class MainActivity : AppCompatActivity()
         val expression = StringBuilder()
         var openBrackets = 0
         var currentNumberLength = 0
+        var unaryMinusStatus = false
 
-        fun signChangeOperation()
-        {
-//            if (unaryMinusStatus)
+        fun signChangeOperation() {
+//            if (expression.isEmpty())
 //            {
+//                expression.append("(-")
 //                openBrackets++
+//            }
+//            {
 //                if (expression.isEmpty())
 //                {
 //                    expressionForEqual.append("(-")
@@ -51,7 +54,6 @@ class MainActivity : AppCompatActivity()
 //            }
         }
 
-
         fun currentNumberLengthCheck() {
             if (expression.isNotEmpty()) {
                 if (expression.last() in '0'..'9' || expression.last() == ',')
@@ -77,16 +79,18 @@ class MainActivity : AppCompatActivity()
         }
 
         fun equalOperation() {
-            val engine = ScriptEngineManager().getEngineByName("js")
-            val result = StringBuilder(engine.eval(expressionCorrectToEqual(expression.toString())).toString())
-            expression.setLength(0)
-            openBrackets = 0
+            if (openBrackets == 0) {
+                val engine = ScriptEngineManager().getEngineByName("js")
+                val result = StringBuilder(engine.eval(expressionCorrectToEqual(expression.toString())).toString())
+                expression.setLength(0)
+                openBrackets = 0
 
-            if (result.endsWith(".0"))
-                result.delete(result.length - 2, result.length)
+                if (result.endsWith(".0"))
+                    result.delete(result.length - 2, result.length)
 
-            currentNumberLength = result.length
-            expression.append(expressionCorrectToView(result.toString()))
+                currentNumberLength = result.length
+                expression.append(expressionCorrectToView(result.toString()))
+            }
         }
 
         fun clearOperation() {
@@ -105,8 +109,7 @@ class MainActivity : AppCompatActivity()
             }
         }
 
-        fun addSymbolToExpression(key: String)
-        {
+        fun addSymbolToExpression(key: String) {
             if (key == "+" || key == "-" || key == "×" || key == "÷" || key == "%" || key == ",") {
                 if (expression.isNotEmpty())
                     if (expression.last() != '+' && expression.last() != '-' && expression.last() != '×' && expression.last() != '÷' && expression.last() != ',') {
@@ -125,30 +128,30 @@ class MainActivity : AppCompatActivity()
                         expression.append("(")
                         openBrackets++
                     }
-                    else if (expression.last() == '%' || expression.last() == ')') {
-                        expression.append("*(")
+                    else if (openBrackets == 0) {
+                        if (expression.last() == '%' || expression.last() == ')' || expression.last() in '0'..'9') {
+                            expression.append("*(")
+                        }
+                        else if (expression.last() == ',') {
+                            expression.setLength(expression.length - 1)
+                            expression.append("*(")
+                        }
                         openBrackets++
                     }
-                    else if (expression.last() in '0'..'9') {
-                        if (openBrackets == 0) {
-                            expression.append("(*")
-                            openBrackets++
-                        }
-                        else {
+                    else {
+                        if (expression.last() == '%' || expression.last() == ')' || expression.last() in '0'..'9')
                             expression.append(")")
-                            openBrackets--
+                        else if (expression.last() == ',') {
+                            expression.setLength(expression.length - 1)
+                            expression.append(")")
                         }
-                    }
-                    else if (expression.last() == ',') {
-                        expression.setLength(expression.length - 1)
-                        expression.append("*(")
+                        openBrackets--
                     }
                 }
                 currentNumberLengthCheck()
                 return
             }
-            if (key == "0")
-            {
+            if (key == "0") {
                 if (expression.isEmpty()) {
                     expression.append(key)
                     currentNumberLengthCheck()
@@ -158,23 +161,28 @@ class MainActivity : AppCompatActivity()
                         expression.append(key)
                         currentNumberLengthCheck()
                     }
+                    else if (expression.last() == ')') {
+                        expression.append("×$key")
+                        currentNumberLengthCheck()
+                    }
                 }
                 return
             }
-            if (expression.isNotEmpty())
-            {
-                if (expression.last() == '0' && currentNumberLength == 1)
-                {
-                    return
+            if (expression.isNotEmpty()) {
+                if (expression.last() == '0' && currentNumberLength == 1) {
+                    expression.setLength(expression.length - 1)
+                    expression.append(key)
                 }
-                else
-                {
+                else if (expression.last() == ')') {
+                    expression.append("×$key")
+                    currentNumberLengthCheck()
+                }
+                else {
                     expression.append(key)
                     currentNumberLengthCheck()
                 }
             }
-            else
-            {
+            else {
                 expression.append(key)
                 currentNumberLengthCheck()
             }
@@ -184,8 +192,7 @@ class MainActivity : AppCompatActivity()
             binding.ResultText.text = expression
         }
 
-        fun resultClick(button: String)
-        {
+        fun resultClick(button: String) {
             when (button) {
                 "one" -> addSymbolToExpression("1")
                 "two" -> addSymbolToExpression("2")
@@ -211,6 +218,7 @@ class MainActivity : AppCompatActivity()
             }
             setResultView()
         }
+
         binding.Button1.setOnClickListener { resultClick("one") }
         binding.Button2.setOnClickListener { resultClick("two") }
         binding.Button3.setOnClickListener { resultClick("three") }
